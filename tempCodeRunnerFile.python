@@ -1,0 +1,22 @@
+def is_prime(n):
+    if n == 1:
+        return False
+    i = 2
+    while i * i <= n:
+        if n % i:
+            return False
+        i += 1
+    return True
+
+def generate_prime_string(length):
+    prime_string = ''
+    num = 2
+    while len(prime_string) < length:
+        if is_prime(num):
+            prime_string += str(num)
+        num += 1
+    return prime_string[:length]
+
+prime_string = generate_prime_string(10005)
+print("@@@@@@@@@@@@@@@@@@@@@@")
+print(prime_string)
